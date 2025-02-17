@@ -1,27 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <nav className="bg-[#212529] text-white fixed w-full">
@@ -35,21 +20,21 @@ function Navbar() {
         </div>
 
         {/* Right Side Links */}
-        <div className="ml-auto relative" ref={menuRef}>
-          {/* Hamburger Icon (Replace SVG with an Image) */}
+        <div className="ml-auto">
+          {/* Hamburger Icon */}
           <button onClick={toggleMenu} className="block md:hidden focus:outline-none">
             <img 
-              src={require("../assets/navicon.png")} // Update path
+              src={require("../assets/navicon.png")} // Update path accordingly
               alt="Menu"
               className="w-6 h-6"
             />
           </button>
 
-          {/* Links */}
+          {/* Links (Toggle Menu) */}
           <ul
-            className={`${
+            className={`transition-all duration-300 ease-in-out ${
               isOpen ? "block" : "hidden"
-            } md:flex md:space-x-6 items-center md:static absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0`}
+            } md:flex md:space-x-6 items-center absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0`}
           >
             <li>
               <Link to="/home" className="block text-lg hover:text-gray-400 transition-colors">

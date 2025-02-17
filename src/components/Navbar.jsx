@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// Import Hamburger Icon (Place your icon file path here)
-import HamburgerIcon from '../assets/navicon.png'; // Hamburger icon 
+// Import Hamburger Icon and Close Icon
+import HamburgerIcon from '../assets/navicon.png'; // Hamburger icon
 import CloseIcon from '../assets/naviconclose.png'; // Close icon
 
 function Navbar() {
@@ -14,14 +14,16 @@ function Navbar() {
 
   return (
     <nav className="bg-[#212529] text-white fixed w-full">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6">
+      <div className="flex flex-col md:flex-row justify-between items-center p-6">
         {/* Left Side */}
         <div className="mb-4 md:mb-0">
-          <h1 className="text-2xl font-bold"><Link to="/home"> Ariana Grande</Link></h1>
+          <h1 className="text-2xl font-bold">
+            <Link to="/home"> Ariana Grande</Link>
+          </h1>
           <p className="text-sm text-gray-400">Tech Solution</p>
         </div>
 
-        {/* Right Side Links */}
+        {/* Right Side */}
         <div className="ml-auto">
           {/* Hamburger Icon - Only visible on mobile view */}
           <button
@@ -29,15 +31,15 @@ function Navbar() {
             className="block md:hidden focus:outline-none"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {/* If menu is open, show Close icon; otherwise, show Hamburger icon */}
-            <img 
-              src={isOpen ? CloseIcon : HamburgerIcon} 
-              alt={isOpen ? "Close menu" : "Open menu"} 
-              className="w-6 h-6" 
+            {/* Display Close Icon when the menu is open, Hamburger Icon when closed */}
+            <img
+              src={isOpen ? CloseIcon : HamburgerIcon}
+              alt={isOpen ? "Close menu" : "Open menu"}
+              className="w-6 h-6"
             />
           </button>
 
-          {/* Links */}
+          {/* Mobile Navigation Links */}
           <ul
             className={`${
               isOpen ? "block" : "hidden"

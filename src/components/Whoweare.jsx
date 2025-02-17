@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Whoweare = () => {
   const [changingText, setChangingText] = useState("brands");
-  const rotatingText = ["brands", "web design", "SMEs", "manufacturers"];
+  const rotatingText = [ "web design", "brands","web development"];
 
   useEffect(() => {
     const interval = setInterval(() => {

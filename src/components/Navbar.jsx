@@ -19,25 +19,17 @@ function Navbar() {
 
         {/* Right Side Links */}
         <div className="ml-auto">
-          {/* Hamburger Icon */}
+          {/* Hamburger Icon (Replace SVG with an Image) */}
           <button
             onClick={toggleMenu}
             className="block md:hidden focus:outline-none"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
+            {/* Replace this SVG with an image */}
+            <img 
+              src={require("../assets/navicon.png")} // nav icon path
+              alt="Menu"
               className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            />
           </button>
 
           {/* Links */}

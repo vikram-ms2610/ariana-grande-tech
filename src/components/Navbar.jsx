@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Import Hamburger Icon (Place your icon file path here)
 import HamburgerIcon from '../assets/navicon.png'; // Hamburger icon 
-import CloseIcon from '../assets/naviconclose.png'; // Close icon 
+import CloseIcon from '../assets/naviconclose.png'; // Close icon
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

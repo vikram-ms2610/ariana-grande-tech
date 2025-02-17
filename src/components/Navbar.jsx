@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// Import Hamburger Icon and Close Icon
-import HamburgerIcon from '../assets/navicon.png'; // Hamburger icon
-import CloseIcon from '../assets/naviconclose.png'; // Close icon
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,42 +10,47 @@ function Navbar() {
 
   return (
     <nav className="bg-[#212529] text-white fixed w-full">
-      <div className="flex flex-col md:flex-row justify-between items-center p-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6">
         {/* Left Side */}
         <div className="mb-4 md:mb-0">
-          <h1 className="text-2xl font-bold">
-            <Link to="/home"> Ariana Grande</Link>
-          </h1>
+          <h1 className="text-2xl font-bold"><Link to="/home"> Ariana Grande</Link></h1>
           <p className="text-sm text-gray-400">Tech Solution</p>
         </div>
 
-        {/* Right Side */}
+        {/* Right Side Links */}
         <div className="ml-auto">
-          {/* Hamburger Icon - Only visible on mobile view */}
+          {/* Hamburger Icon */}
           <button
             onClick={toggleMenu}
             className="block md:hidden focus:outline-none"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {/* Display Close Icon when the menu is open, Hamburger Icon when closed */}
-            <img
-              src={isOpen ? CloseIcon : HamburgerIcon}
-              alt={isOpen ? "Close menu" : "Open menu"}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
               className="w-6 h-6"
-            />
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
           </button>
 
-          {/* Mobile Navigation Links */}
+          {/* Links */}
           <ul
             className={`${
               isOpen ? "block" : "hidden"
-            } md:flex md:space-x-6 items-center md:static absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0 transition-all ease-in-out duration-300`}
+            } md:flex md:space-x-6 items-center md:static absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0`}
           >
             <li>
               <Link
                 to="/home"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
+                onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
@@ -58,16 +59,17 @@ function Navbar() {
               <Link
                 to="/insight"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
+                onClick={() => setIsOpen(false)}
               >
                 Insight
               </Link>
             </li>
+           
             <li>
               <Link
                 to="/servicesnav"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
+                onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
@@ -76,7 +78,7 @@ function Navbar() {
               <Link
                 to="/reach-us"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
+                onClick={() => setIsOpen(false)}
               >
                 Reach Us
               </Link>

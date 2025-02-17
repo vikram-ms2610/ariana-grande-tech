@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Import Hamburger Icon (Place your icon file path here)
+import HamburgerIcon from '../assets/navicon.png';
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,46 +16,61 @@ function Navbar() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-6">
         {/* Left Side */}
         <div className="mb-4 md:mb-0">
-          <h1 className="text-2xl font-bold">
-            <Link to="/home"> Ariana Grande</Link>
-          </h1>
+          <h1 className="text-2xl font-bold"><Link to="/home"> Ariana Grande</Link></h1>
           <p className="text-sm text-gray-400">Tech Solution</p>
         </div>
 
         {/* Right Side Links */}
         <div className="ml-auto">
-          {/* Hamburger Icon */}
-          <button onClick={toggleMenu} className="block md:hidden focus:outline-none">
-            <img 
-              src={require("../assets/navicon.png")} // Update path accordingly
-              alt="Menu"
-              className="w-6 h-6"
-            />
+          {/* Hamburger Icon - Only visible on mobile view */}
+          <button
+            onClick={toggleMenu}
+            className="block md:hidden focus:outline-none"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            {/* Replace with your actual icon */}
+            <img src={HamburgerIcon} alt="Hamburger menu" className="w-6 h-6" />
           </button>
 
-          {/* Links (Toggle Menu) */}
+          {/* Links */}
           <ul
-            className={`transition-all duration-300 ease-in-out ${
+            className={`${
               isOpen ? "block" : "hidden"
-            } md:flex md:space-x-6 items-center absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0`}
+            } md:flex md:space-x-6 items-center md:static absolute bg-[#212529] md:bg-transparent w-full left-0 p-6 md:p-0 top-16 md:top-0 transition-all ease-in-out duration-300`}
           >
             <li>
-              <Link to="/home" className="block text-lg hover:text-gray-400 transition-colors">
+              <Link
+                to="/home"
+                className="block text-lg hover:text-gray-400 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/insight" className="block text-lg hover:text-gray-400 transition-colors">
+              <Link
+                to="/insight"
+                className="block text-lg hover:text-gray-400 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Insight
               </Link>
             </li>
             <li>
-              <Link to="/servicesnav" className="block text-lg hover:text-gray-400 transition-colors">
+              <Link
+                to="/servicesnav"
+                className="block text-lg hover:text-gray-400 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/reach-us" className="block text-lg hover:text-gray-400 transition-colors">
+              <Link
+                to="/reach-us"
+                className="block text-lg hover:text-gray-400 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Reach Us
               </Link>
             </li>

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Import Hamburger Icon (Place your icon file path here)
-import HamburgerIcon from '../assets/navicon.png';
-import CloseIcon from '../assets/navicon.png'; // Close icon 
+import HamburgerIcon from '../assets/navicon.png'; // Hamburger icon 
+import CloseIcon from '../assets/naviconclose.png'; // Close icon 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ function Navbar() {
               <Link
                 to="/home"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
               >
                 Home
               </Link>
@@ -56,7 +56,7 @@ function Navbar() {
               <Link
                 to="/insight"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
               >
                 Insight
               </Link>
@@ -65,7 +65,7 @@ function Navbar() {
               <Link
                 to="/servicesnav"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
               >
                 Services
               </Link>
@@ -74,7 +74,7 @@ function Navbar() {
               <Link
                 to="/reach-us"
                 className="block text-lg hover:text-gray-400 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsOpen(false)} // Close menu when a link is clicked
               >
                 Reach Us
               </Link>

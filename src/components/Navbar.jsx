@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Import Hamburger Icon (Place your icon file path here)
 import HamburgerIcon from '../assets/navicon.png';
+import CloseIcon from '../assets/navicon.png'; // Close icon 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +29,12 @@ function Navbar() {
             className="block md:hidden focus:outline-none"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {/* Replace with your actual icon */}
-            <img src={HamburgerIcon} alt="Hamburger menu" className="w-6 h-6" />
+            {/* If menu is open, show Close icon; otherwise, show Hamburger icon */}
+            <img 
+              src={isOpen ? CloseIcon : HamburgerIcon} 
+              alt={isOpen ? "Close menu" : "Open menu"} 
+              className="w-6 h-6" 
+            />
           </button>
 
           {/* Links */}

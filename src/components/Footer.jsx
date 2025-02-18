@@ -27,6 +27,7 @@ function Footer() {
               </a>
             ))}
           </div>
+          <div className="hidden md:block"></div>
         </div>
 
         {/* Line Break */}

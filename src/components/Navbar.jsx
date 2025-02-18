@@ -7,9 +7,10 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full h-50 absolute fixed bg-[#212529]">
+      {/* Fixed Navbar */}
+      <div className="w-full fixed top-0 left-0 bg-[#212529] z-50 shadow-md">
         <header className="flex justify-between items-center text-white py-6 px-8 md:px-32">
-          {/* Nav heading */}
+          {/* Nav Heading */}
           <div className="mb-4 md:mb-0">
             <h1 className="text-2xl font-bold">
               <Link to="/home">Ariana Grande</Link>
@@ -45,31 +46,34 @@ function Navbar() {
           <img
             src={navicon}
             alt="Menu"
-            className="xl:hidden w-8 h-8  block text-5xl cursor-pointer"
+            className="xl:hidden w-8 h-8 block cursor-pointer"
             onClick={() => setismenuopen(!ismenuopen)}
           />
-
-          {/* Mobile View Nav Items */}
-          <div
-            className={`absolute xl:hidden top-24 left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-transform duration-300 ${
-              ismenuopen ? "opacity-100" : "hidden"
-            }`}
-          >
-            <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-              <Link to="/home">Home</Link>
-            </li>
-            <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-              <Link to="/insight">Insight</Link>
-            </li>
-            <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-              <Link to="/servicesnav">Services</Link>
-            </li>
-            <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-              <Link to="/reach-us">Reach Us</Link>
-            </li>
-          </div>
         </header>
+
+        {/* Mobile View Nav Items */}
+        <div
+          className={`absolute xl:hidden top-[72px] left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-all ${
+            ismenuopen ? "opacity-100 h-auto py-4" : "opacity-0 h-0 overflow-hidden"
+          }`}
+        >
+          <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
+            <Link to="/home">Home</Link>
+          </li>
+          <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
+            <Link to="/insight">Insight</Link>
+          </li>
+          <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
+            <Link to="/servicesnav">Services</Link>
+          </li>
+          <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
+            <Link to="/reach-us">Reach Us</Link>
+          </li>
+        </div>
       </div>
+
+      {/* Add Padding to Prevent Overlapping */}
+      <div className="pt-[80px]"></div>
     </>
   );
 }

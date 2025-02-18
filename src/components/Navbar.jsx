@@ -58,16 +58,16 @@ function Navbar() {
           }`}
         >
           <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-            <Link to="/home">Home</Link>
+            <Link to="/home" className="text-white hover:text-gray-400">Home</Link>
           </li>
           <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-            <Link to="/insight">Insight</Link>
+            <Link to="/insight" className="text-white hover:text-gray-400">Insight</Link>
           </li>
           <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-            <Link to="/servicesnav">Services</Link>
+            <Link to="/servicesnav" className="text-white hover:text-gray-400">Services</Link>
           </li>
           <li className="list-none w-full text-center p-1 transition-all cursor-pointer">
-            <Link to="/reach-us">Reach Us</Link>
+            <Link to="/reach-us" className="text-white hover:text-gray-400">Reach Us</Link>
           </li>
         </div>
       </div>

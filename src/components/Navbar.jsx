@@ -37,7 +37,7 @@ function Navbar() {
     className="p-3 relative group transition-all"
   >
     {/* Normal Text and Hover Gradient Text */}
-    <span className="text-gray-400 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-500 group-hover:to-red-500 bg-clip-text transition-all">
+    <span className="text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-500 group-hover:to-red-500 bg-clip-text transition-all">
       Insight
     </span>
 

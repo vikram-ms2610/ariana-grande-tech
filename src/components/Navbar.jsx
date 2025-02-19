@@ -54,7 +54,7 @@ function Navbar() {
 
         {/* Mobile View Nav Items */}
         <div
-          className={`absolute xl:hidden top-[72px] left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-all duration-[5000ms] ${
+          className={`absolute xl:hidden top-[72px] left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-all duration-[3000ms] ${
             ismenuopen ? "opacity-100 h-auto py-4" : "opacity-0 h-0 overflow-hidden"
           }`}
         >

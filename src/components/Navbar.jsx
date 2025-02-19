@@ -26,11 +26,20 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/insight" className="p-3 hover:text-gray-400 transition-all">
                 Insight
               </Link>
-            </li>
+            </li> */}
+            <li>
+  <Link
+    to="/insight"
+    className="p-3 relative transition-all group hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 hover:bg-clip-text hover:text-transparent"
+  >
+    Insight
+    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
+  </Link>
+</li>
             <li>
               <Link to="/servicesnav" className="p-3 hover:text-gray-400 transition-all">
                 Services
@@ -54,7 +63,7 @@ function Navbar() {
 
         {/* Mobile View Nav Items */}
         <div
-          className={`absolute xl:hidden top-[72px] left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-all duration-[3000ms] ${
+          className={`absolute xl:hidden top-[72px] left-0 w-full bg-[#212529] flex flex-col items-center gap-6 font-semibold text-lg transition-all duration-[1000ms] ${
             ismenuopen ? "opacity-100 h-auto py-4" : "opacity-0 h-0 overflow-hidden"
           }`}
         >

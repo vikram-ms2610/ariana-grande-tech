@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import navicon from "../assets/navicon.png";
+import closeicon from "../assets/closeicon.png"; // Add a close icon image
 
 function Navbar() {
   const [ismenuopen, setismenuopen] = useState(false);
@@ -44,9 +45,9 @@ function Navbar() {
 
           {/* Hamburger Menu - Mobile View */}
           <img
-            src={navicon}
+            src={ismenuopen ? closeicon : navicon} // Toggle icon
             alt="Menu"
-            className="xl:hidden w-8 h-8 block cursor-pointer"
+            className="xl:hidden w-8 h-8 block cursor-pointer filter brightness-0 invert-[20%] hue-rotate-180" // Ensuring blue color
             onClick={() => setismenuopen(!ismenuopen)}
           />
         </header>

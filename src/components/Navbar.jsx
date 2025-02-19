@@ -44,12 +44,19 @@ function Navbar() {
           </ul>
 
           {/* Hamburger Menu - Mobile View */}
-          <img
+          {/* <img
             src={ismenuopen ? closeicon : navicon} // Toggle icon
             alt="Menu"
             className="xl:hidden w-8 h-8 block cursor-pointer filter brightness-0 invert-[20%] hue-rotate-180" // Ensuring blue color
             onClick={() => setismenuopen(!ismenuopen)}
+          /> */}
+          <img
+                 src={ismenuopen ? closeicon : navicon} // Toggle icon
+                 alt="Menu"
+                 className="xl:hidden w-8 h-8 block cursor-pointer filter invert sepia saturate-500 hue-rotate-180"
+           onClick={() => setismenuopen(!ismenuopen)}
           />
+
         </header>
 
         {/* Mobile View Nav Items */}

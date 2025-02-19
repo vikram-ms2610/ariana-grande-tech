@@ -21,11 +21,21 @@ function Navbar() {
 
           {/* Desktop Nav Links */}
           <ul className="hidden xl:flex items-center gap-12 font-semibold text-base">
-            <li>
-              <Link to="/home" className="p-3 hover:text-gray-400 transition-all">
-                Home
-              </Link>
-            </li>
+            
+     <li>
+  <Link
+    to="/home"
+    className="p-3 relative group transition-all"
+  >
+    {/* Normal Text and Hover Gradient Text */}
+    <span className=" group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-500 group-hover:to-red-500 bg-clip-text transition-all">
+      Home
+    </span>
+
+    {/* Normal Bottom Border - Only shows on Hover */}
+    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
+  </Link>
+</li>       
             {/* <li>
               <Link to="/insight" className="p-3 hover:text-gray-400 transition-all">
                 Insight
@@ -46,21 +56,36 @@ function Navbar() {
   </Link>
 </li>
 
-  
+  <li>
+<Link
+    to="/servicesnav"
+    className="p-3 relative group transition-all"
+  >
+    {/* Normal Text and Hover Gradient Text */}
+    <span className=" group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-500 group-hover:to-red-500 bg-clip-text transition-all">
+    Services
+    </span>
 
+    {/* Normal Bottom Border - Only shows on Hover */}
+    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
+  </Link>
+</li>
 
-                
+<li>
+<Link
+    to="/reach-us"
+    className="p-3 relative group transition-all"
+  >
+    {/* Normal Text and Hover Gradient Text */}
+    <span className=" group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-500 group-hover:to-red-500 bg-clip-text transition-all">
+    Reach Us
+    </span>
 
-            <li>
-              <Link to="/servicesnav" className="p-3 hover:text-gray-400 transition-all">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/reach-us" className="p-3 hover:text-gray-400 transition-all">
-                Reach Us
-              </Link>
-            </li>
+    {/* Normal Bottom Border - Only shows on Hover */}
+    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
+  </Link>
+</li>
+
           </ul>
 
           {/* Hamburger Menu - Mobile View */}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import navicon from "../assets/navicon_enhanced.png";
-import closeicon from "../assets/closeicon_enhanced.png"; // Updated icons with enhanced blue color
+import navicon from "../assets/navicon.png";
+import closeicon from "../assets/closeicon.png"; // Updated icons with enhanced blue color
 
 function Navbar() {
   const [ismenuopen, setismenuopen] = useState(false);

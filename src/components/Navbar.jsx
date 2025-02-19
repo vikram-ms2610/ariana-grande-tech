@@ -31,15 +31,22 @@ function Navbar() {
                 Insight
               </Link>
             </li> */}
-            <li>
-  <Link
-    to="/insight"
-    className="p-3 relative transition-all group hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 hover:bg-clip-text hover:text-transparent"
-  >
-    Insight
-    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
-  </Link>
-</li>
+                         <li>
+               <Link
+                to="/insight"
+               className="p-3 relative group transition-all"
+                     >
+                        Insight
+                    {/* Gradient Text */}
+                   <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                         Insight
+                           </span>
+
+                   {/* Gradient Bottom Border - Initially hidden, expands on hover */}
+                      <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all group-hover:w-full"></span>
+                    </Link>
+                     </li>
+
             <li>
               <Link to="/servicesnav" className="p-3 hover:text-gray-400 transition-all">
                 Services
